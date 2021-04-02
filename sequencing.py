@@ -2,6 +2,7 @@
 import tensorflow as tensorflow
 from tensorflow import keras
 from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 sentences = [
     'I love my dog',
@@ -17,14 +18,21 @@ word_index = tokenizer.word_index
 
 sequences = tokenizer.texts_to_sequences(sentences)
 
+## PADDING is used to make sure all the sentences for training are of the same size, by adding padding (they are represented as '0') ##
+# padding='post' makes the '0' go to the back of the sentences
+padded = pad_sequences(sequences, padding='post')
+
 # print(word_index)
 # print(sequences)
+print(padded)
 
-test_data = [
-    'i really love my dog',
-    'my dog loves my manatee'
-]
 
-test_seq = tokenizer.texts_to_sequences(test_data)
-print(word_index)
-print(test_seq)
+### TO TEST OOV ###
+# test_data = [
+#     'i really love my dog',
+#     'my dog loves my manatee'
+# ]
+
+# test_seq = tokenizer.texts_to_sequences(test_data)
+# print(word_index)
+# print(test_seq)
