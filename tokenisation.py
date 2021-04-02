@@ -1,3 +1,5 @@
+#### TOKENIZATION is a way to represent words in a way for the computer to process them. With the aim of passing them through a neural network that can understand their meaning ####
+
 import tensorflow as tensorflow
 from tensorflow import keras
 from tensorflow.keras.preprocessing.text import Tokenizer
