@@ -1,3 +1,4 @@
+#### SEQUENCING is similar to TOKENIZATION, except now its representing sentences, taking the tokenized words, it sequences the tokens into an array according to the sentences ####
 import tensorflow as tensorflow
 from tensorflow import keras
 from tensorflow.keras.preprocessing.text import Tokenizer
