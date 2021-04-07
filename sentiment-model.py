@@ -7,12 +7,14 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 vocab_size = 10000
+# vocab_size = 5000
 embedding_dim = 16
 max_length = 100
 trunc_type = 'post'
 padding_type = 'post'
 oov_tok = "<OOV>"
-training_size = 10000
+# training_size = 20000
+training_size = 5000
 
 with open('datasets/Sarcasm_Headlines_Dataset.json', 'r') as f:
     datastore = json.load(f)
