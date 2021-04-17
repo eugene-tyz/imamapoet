@@ -68,3 +68,6 @@ for _ in range(next_words):
             break
     seed_text += " " + output_word
 print(seed_text)
+f = open("output.txt", "a")
+f.write(seed_text)
+f.close()
