@@ -74,6 +74,6 @@ print(seed_text)
 # Create OUTPUT file
 actual_time = strftime("%Y-%m-%d %H-%M-%S", gmtime())
 # f = open("output.txt", "a")
-f = open("output-" + str(actual_time) + ".txt", "w+")
+f = open("output/poem-" + str(actual_time) + ".txt", "w+")
 f.write(seed_text)
 f.close()
