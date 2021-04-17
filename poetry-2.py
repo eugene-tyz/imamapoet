@@ -1,3 +1,4 @@
+from time import gmtime, strftime
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout, Bidirectional
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -9,8 +10,8 @@ import numpy as np
 
 
 tokenizer = Tokenizer()
-data = open('datasets/100dayschallenge.txt', encoding="utf8").read()
-# data = open('datasets/markdoty.txt', encoding="utf8").read()
+# data = open('datasets/100dayschallenge.txt', encoding="utf8").read()
+data = open('datasets/markdoty.txt', encoding="utf8").read()
 
 corpus = data.lower().split("\n")
 
@@ -68,6 +69,11 @@ for _ in range(next_words):
             break
     seed_text += " " + output_word
 print(seed_text)
-f = open("output.txt", "a")
+
+
+# Create OUTPUT file
+actual_time = strftime("%Y-%m-%d %H-%M-%S", gmtime())
+# f = open("output.txt", "a")
+f = open("output-" + str(actual_time) + ".txt", "w+")
 f.write(seed_text)
 f.close()
