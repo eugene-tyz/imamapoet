@@ -11,7 +11,8 @@ import numpy as np
 
 tokenizer = Tokenizer()
 # data = open('datasets/100dayschallenge.txt', encoding="utf8").read()
-data = open('datasets/markdoty.txt', encoding="utf8").read()
+# data = open('datasets/markdoty.txt', encoding="utf8").read()
+data = open('datasets/ocean.txt', encoding="utf8").read()
 
 corpus = data.lower().split("\n")
 
